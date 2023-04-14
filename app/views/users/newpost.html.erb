@@ -1,0 +1,23 @@
+<h2>New post</h2>
+
+<%= nested_form_for([resource, as: resource_name.with_post], url: registration_path(resource_name)) do |f| %>
+  <%= render "devise/shared/error_messages", resource: resource %>
+ 
+ <%= f.feilds_for :post  do |p| %>
+<div class = "field">
+<%= p.label :title%> <br />
+<%= p.text_field :title %>
+</div>
+
+<div class = "field" >
+<%= p.label :body %> <br />
+<%= p.text_field :body %>
+</div>
+
+ <%end%>
+ 
+ 
+ <div class="actions">
+    <%= f.submit "New Post" %>
+  </div>
+<% end %>

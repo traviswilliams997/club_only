@@ -1,0 +1,19 @@
+    
+  <%= form_with( model:  @post ) do |form| %>
+  <div class= "field">
+    <%= form.label :title  %>
+    <%= form.text_field :title %> 
+    </div>
+    <br>
+    <div class = "field">
+        <%= form.label :body%>
+
+  <%= form.text_field :body %>
+  </div> <br>
+  <%= form.hidden_field :user_id, value: current_user.id  %>
+  
+       <div class="action">
+
+      <%= form.submit "Submit" %>
+      </div>
+  <% end %>
